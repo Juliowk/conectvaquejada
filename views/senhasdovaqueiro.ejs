@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+     <!-- Meta tags Obrigatórias -->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+     <!-- CSS Básico -->
+     <link rel="stylesheet" href="/stylesheets/basico.css">
+     <!-- CSSn Cadastro -->
+     <link rel="stylesheet" href="/stylesheets/cadastro.css">
+     <!-- CSS Confirmar_senha -->
+     <link rel="stylesheet" href="/stylesheets/confirmar_senha.css">
+     <!-- CSS senhasDoVaqueiro -->
+     <link rel="stylesheet" href="/stylesheets/senhasDoVaqueiro.css">
+
+     <title>
+          <%= comprador.nome %>
+     </title>
+</head>
+
+<body>
+
+     <!-- Navegação -->
+     <nav class="navbar navbar-expand-lg navbar-dark">
+
+          <a href="/" class="navbar-brand">
+               <img src="/images/logos/conect_logo.png" alt="">
+          </a>
+
+          <!-- Navbar-links -->
+          <div class="collapse navbar-collapse justify-content-around">
+               <div class="navbar-nav">
+                    <a href="/" class="nav-item nav-link active mr-5">INICIO</a>
+                    <a href="/vaquejadas" class="nav-item nav-link mr-5">VAQUEJADAS</a>
+                    <a href="#" class="nav-item nav-link mr-5">RESULTADOS</a>
+                    <a href="#" class="nav-item nav-link mr-5">CONTATO</a>
+                    <a href="/login" class="btn mr-5 botão" style="width: 133px;">ENTRAR</a>
+               </div>
+          </div>
+          <!-- Fim do navbar links -->
+
+     </nav>
+     <!-- Fim da navegação -->
+
+     <!-- Link de voltar -->
+     <div class="container" id="voltar">
+
+          <div class="row">
+               <div class="col-11"></div>
+               <div class="col-1">
+
+                    <a href="/" class="texto">Inicio</a>
+
+               </div>
+
+          </div>
+     </div>
+
+     <!-- Inicio da Section -->
+     <% for (const senhaDoComprador of senhasDoComprador) { %>
+
+          <section>
+               <div class="container">
+
+                    <div class="row">
+
+                         <div class="col-12">
+                              <!-- Formulario -->
+                              <form method="post" enctype="multipart/form-data" action="#">
+
+                                   <% for (const senha of senhas) { %>
+
+                                        <% if (senhaDoComprador.idSenha==senha.id) { %>
+
+                                             <div>
+
+                                                  <div class="form-row">
+
+                                                       <div class="form-group col-3">
+                                                            <label for="numeroSenha" class="col col-form-label texto">Nº
+                                                                 SENHA</label>
+
+                                                            <input type="text" readonly
+                                                                 class="form-control-plaintext texto-centralizado input-formulario form-fixos"
+                                                                 id="numeroSenha" value="<%= senha.numero %>"
+                                                                 name="numeroSenha">
+                                                       </div>
+
+                                                       <div class="form-group col-3">
+                                                            <label for="valorSenha"
+                                                                 class="col col-form-label texto">VALOR:</label>
+                                                            <input type="text" readonly
+                                                                 class="form-control-plaintext texto-centralizado input-formulario form-fixos"
+                                                                 id="valorSenha" value="R$<%= senha.preço %>"
+                                                                 name="valorSenha">
+                                                       </div>
+
+                                                       <div class="form-group col-3">
+                                                            <label for="categoriaSenha"
+                                                                 class="col col-form-label texto">CATEGORIA:</label>
+                                                            <input type="text" readonly
+                                                                 class="form-control-plaintext texto-centralizado input-formulario form-fixos"
+                                                                 id="categoriaSenha" value="<%= senha.categoria %>"
+                                                                 name="categoriaSenha">
+                                                       </div>
+
+                                                       <div class="form-group col-3">
+                                                            <label for="vaquejadaSenha"
+                                                                 class="col col-form-label texto">VAQUEJADA:</label>
+                                                            <input type="text" readonly
+                                                                 class="form-control-plaintext texto-centralizado input-formulario form-fixos"
+                                                                 id="vaquejadaSenha" value="<%= senha.vaquejada %>"
+                                                                 name="vaquejadaSenha">
+                                                       </div>
+
+                                                  </div>
+
+                                                  <div class="form-row">
+
+                                                       <div class="form-group col-md-6">
+                                                            <label for="nomeCompleto" class="texto col">NOME
+                                                                 COMPLETO:</label>
+                                                            <input readonly type="text"
+                                                                 class="form-control-plaintext texto-centralizado input-formulario"
+                                                                 id="nomeCompleto" name="nomeCompleto"
+                                                                 value="<%= comprador.nome %>">
+                                                       </div>
+
+                                                       <div class="form-group col-md-6">
+                                                            <label for="cpf" class="texto col">CPF:</label>
+                                                            <input readonly type="text"
+                                                                 pattern="(\d{3}.?\d{3}.?\d{3}-?\d{2})"
+                                                                 class="form-control-plaintext texto-centralizado input-formulario"
+                                                                 id="cpf" name="cpf" value="<%= comprador.cpf %>">
+                                                       </div>
+
+                                                  </div>
+
+                                                  <div class="form-row">
+
+                                                       <div class="form-group col-md">
+                                                            <label for="apelido" class="texto col">APELIDO:</label>
+                                                            <input readonly type="text"
+                                                                 class="form-control-plaintext texto-centralizado  input-formulario"
+                                                                 id="apelido" name="apelido"
+                                                                 value="<%= senhaDoComprador.apelido %>">
+                                                       </div>
+
+                                                       <div class="form-group col-md">
+                                                            <label for="cidade" class="texto col">CIDADE:</label>
+                                                            <input readonly type="text"
+                                                                 class="form-control-plaintext texto-centralizado input-formulario"
+                                                                 id="cidade" name="cidade"
+                                                                 value="<%= senhaDoComprador.cidade %>">
+                                                       </div>
+
+                                                       <div class="form-group col-md">
+                                                            <label for="estado" class="texto col">ESTADO:</label>
+                                                            <input readonly type="text"
+                                                                 class="form-control-plaintext texto-centralizado input-formulario"
+                                                                 id="estado" name="estado"
+                                                                 value="<%= senhaDoComprador.estado %>">
+                                                       </div>
+
+                                                  </div>
+
+                                                  <div class="form-row">
+
+                                                       <div class="form-group col-md">
+                                                            <label for="cavaloPuxador" class="texto col">NOME DO
+                                                                 CAVALO
+                                                                 (Puxador):</label>
+                                                            <input readonly type="text"
+                                                                 class="form-control-plaintext texto-centralizado input-formulario"
+                                                                 id="cavaloPuxador" name="cavaloPuxador"
+                                                                 value="<%= senhaDoComprador.cavalo_puxador %>">
+                                                       </div>
+
+                                                       <div class="form-group col-md">
+                                                            <label for="esteira" class="texto col">ESTEIRA:</label>
+                                                            <input readonly type="text"
+                                                                 class="form-control-plaintext texto-centralizado input-formulario"
+                                                                 id="estreira" name="esteira"
+                                                                 value="<%= senhaDoComprador.esteira %>">
+                                                       </div>
+
+                                                       <div class="form-group col-md">
+                                                            <label for="cavaloEsteira" class="texto col">NOME DO
+                                                                 CAVALO
+                                                                 (Esteira):</label>
+                                                            <input readonly type="text"
+                                                                 class="form-control-plaintext texto-centralizado input-formulario"
+                                                                 id="cavaloEsteira" name="cavaloEsteira"
+                                                                 value="<%= senhaDoComprador.cavalo_esteira %>">
+                                                       </div>
+
+                                                  </div>
+
+                                                  <div class="form-row">
+
+                                                       <div class="form-group col-md-6">
+                                                            <label for="representacao"
+                                                                 class="texto col">REPRESENTAÇÃO:</label>
+                                                            <input readonly type="text"
+                                                                 class="form-control-plaintext texto-centralizado input-formulario"
+                                                                 id="representacao" name="representacao"
+                                                                 value="<%= senhaDoComprador.representação %>">
+                                                       </div>
+
+                                                       <div class="form-group col-md-6">
+                                                            <label for="status" class="texto col">STATUS:</label>
+                                                            <input readonly type="text"
+                                                                 class="form-control-plaintext texto-centralizado input-formulario"
+                                                                 id="status" name="status"
+                                                                 value="<%= senha.status %>">
+                                                       </div>
+
+                                                  </div>
+                                                  
+
+                                             </div>
+
+                                        <% } %>
+
+                                   <% } %>
+
+                              </form>
+                              <!-- Fim do Formulario -->
+                         </div>
+
+                    </div>
+
+               </div>
+
+          </section>
+
+          <% } %>
+               <!-- Fim da Section -->
+
+
+
+               <!-- Inicio Footer -->
+               <footer>
+
+                    <nav class="navbar navbar-light" id="footer">
+
+                         <div>
+
+                              <p class="direito-autoral">© 2024 CR84PUBLICIDADE - Tecnologia da InformaçãoA cópia total
+                                   ou parcial
+                                   do conteúdo deste site sem a permissão de seus idealizadores é crime previsto na Lei
+                                   de
+                                   Direitos Autorais</p>
+
+                         </div>
+
+                    </nav>
+
+               </footer>
+               <!-- Fim do Footer -->
+
+
+               <!-- JavaScript (Opcional) -->
+               <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+               <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                    crossorigin="anonymous"></script>
+               <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+                    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+                    crossorigin="anonymous"></script>
+               <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+                    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+                    crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+     <!-- Meta tags Obrigatórias -->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+     <!-- CSS Básico -->
+     <link rel="stylesheet" href="/stylesheets/basico.css">
+     <!-- CSSn Cadastro -->
+     <link rel="stylesheet" href="/stylesheets/cadastro.css">
+
+     <title>
+          <%= vaquejada.nome %>
+     </title>
+</head>
+
+<body>
+
+     <!-- Navegação -->
+     <nav class="navbar navbar-expand-lg navbar-dark">
+
+          <a href="/" class="navbar-brand">
+               <img src="/images/logos/conect_logo.png" alt="">
+          </a>
+
+          <!-- Navbar-links -->
+          <div class="collapse navbar-collapse justify-content-around">
+               <div class="navbar-nav">
+                    <a href="/" class="nav-item nav-link active mr-5">INICIO</a>
+                    <a href="/vaquejadas" class="nav-item nav-link mr-5">VAQUEJADAS</a>
+                    <a href="#" class="nav-item nav-link mr-5">RESULTADOS</a>
+                    <a href="#" class="nav-item nav-link mr-5">CONTATO</a>
+                    <a href="/login" class="btn mr-5 botão" style="width: 133px;">ENTRAR</a>
+               </div>
+          </div>
+          <!-- Fim do navbar links -->
+
+     </nav>
+     <!-- Fim da navegação -->
+
+     <!-- Inicio da Section -->
+     <section>
+          <div class="container">
+
+               <div id="carousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                         <div class="carousel-item active">
+                              <img class="d-block w-100 img-banner" src="/images/banner/<%= vaquejada.banner %>"
+                                   alt="Primeiro Slide">
+                         </div>
+                    </div>
+               </div>
+
+               <!-- Texto e botão -->
+               <div class="row cadastro">
+                    <div class="col-md-6">
+                         <h3 class="texto texto-h3">CADASTRO</h3>
+                    </div>
+                    <div class="col-md-6">
+                         <a href="selecionar-senha.html" class="btn botão btn-voltar">Voltar</a>
+                    </div>
+               </div>
+
+               <!-- Formulario -->
+               <form method="post" enctype="multipart/form-data"
+                    action="/operations/cadastroDeCompra?idSenha=<%= senha.id %>&idVaquejada=<%= vaquejada.id %>">
+                    <div class="form-row">
+
+                         <div class="form-group col-2">
+                              <label for="numeroSenha" class="col col-form-label texto">Nº SENHA</label>
+                              <input type="text" readonly
+                                   class="form-control-plaintext texto input-formulario form-fixos" id="numeroSenha"
+                                   value="<%= senha.numero %>" name="numeroSenha">
+                         </div>
+
+                         <div class="form-group col-2">
+                              <label for="valorSenha" class="col col-form-label texto">VALOR DA SENHA</label>
+                              <input type="text" readonly
+                                   class="form-control-plaintext texto input-formulario form-fixos" id="valorSenha"
+                                   value="R$<%= senha.preço %>" name="valorSenha">
+                         </div>
+
+                         <div class="form-group col-2">
+                              <label for="categoriaSenha" class="col col-form-label texto">CATEGORIA:</label>
+                              <input type="text" readonly
+                                   class="form-control-plaintext texto input-formulario form-fixos" id="categoriaSenha"
+                                   value="<%= categoria.id %>" name="categoriaSenha">
+                         </div>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                         <div class="form-group col-md-6">
+                              <label for="nomeCompleto" class="texto col">NOME COMPLETO:</label>
+                              <input type="text" class="form-control  input-formulario" id="nomeCompleto"
+                                   name="nomeCompleto">
+                         </div>
+
+                         <div class="form-group col-md-6">
+                              <label for="representacao" class="texto col">REPRESENTAÇÃO:</label>
+                              <input type="text" class="form-control input-formulario" id="representacao"
+                                   name="representacao">
+                         </div>
+
+                    </div>
+
+                    <div class="form-row">
+
+                         <div class="form-group col-md">
+                              <label for="apelido" class="texto col">APELIDO:</label>
+                              <input type="text" class="form-control  input-formulario" id="apelido" name="apelido">
+                         </div>
+
+                         <div class="form-group col-md">
+                              <label for="cidade" class="texto col">CIDADE:</label>
+                              <input type="text" class="form-control input-formulario" id="cidade" name="cidade">
+                         </div>
+
+                         <div class="form-group col-md">
+                              <label for="estado" class="texto col">ESTADO:</label>
+                              <input type="text" class="form-control input-formulario" id="estado" name="estado">
+                         </div>
+
+                    </div>
+
+                    <div class="form-row">
+
+                         <div class="form-group col-md">
+                              <label for="cavaloPuxador" class="texto col">NOME DO CAVALO (Puxador):</label>
+                              <input type="text" class="form-control  input-formulario" id="cavaloPuxador"
+                                   name="cavaloPuxador">
+                         </div>
+
+                         <div class="form-group col-md">
+                              <label for="esteira" class="texto col">ESTEIRA:</label>
+                              <input type="text" class="form-control input-formulario" id="estreira" name="esteira">
+                         </div>
+
+                         <div class="form-group col-md">
+                              <label for="cavaloEsteira" class="texto col">NOME DO CAVALO (Esteira):</label>
+                              <input type="text" class="form-control input-formulario" id="cavaloEsteira"
+                                   name="cavaloEsteira">
+                         </div>
+
+                    </div>
+
+                    <div class="form-row">
+
+                         <div class="form-group col-md-4">
+                              <label for="cpf" class="texto col">CPF:</label>
+                              <input type="text" pattern="(\d{3}.?\d{3}.?\d{3}-?\d{2})"
+                                   class="form-control input-formulario" id="cpf" name="cpf"
+                                   placeholder="000.000.000-00">
+                         </div>
+
+                         <div class="form-group col-md-5">
+                              <label for="senha" class="texto col">SENHA DE ACESSO:</label>
+                              <input type="password" class="form-control input-formulario" id="senha" name="senha"
+                                   placeholder="Minimo de 6 caracteres" minlength="6">
+                         </div>
+
+                         <div class="col-md-2">
+                              <a href="" class="btn botão btn-pagar" data-toggle="modal"
+                                   data-target="#modal-pagamento">Comprar</a>
+                         </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="modal-pagamento" tabindex="-1" role="dialog"
+                         aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+                         <div class="modal-dialog modal-dialog-centered" role="document">
+
+                              <div class="modal-content">
+
+                                   <div class="modal-header">
+
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                             <span aria-hidden="true">&times;</span>
+                                        </button>
+
+                                   </div>
+
+                                   <div class="modal-body">
+
+                                        <img src="/images/QR-code/qrcode-pagamento.png" alt="">
+
+                                        <p><a href="https://www.google.com/search?q=qr+code&sca_esv"
+                                                  target="_blank">Link de pagamento</a></p>
+
+                                        <h3>Pix : 84981509794</h3>
+
+                                        <p id="pix">Enviar comprovante para WhatsApp:
+                                             84 98150-9794
+                                        </p>
+
+                                        <button type="submit" class="btn botão">CONFIRMAR PAGAMENTO</button>
+
+                                   </div>
+
+
+                              </div>
+
+                         </div>
+                    </div>
+                    <!-- Fim do Modal -->
+
+               </form>
+               <!-- Fim do Formulario -->
+
+
+
+
+          </div>
+
+     </section>
+     <!-- Fim da Section -->
+
+
+
+     <!-- Inicio Footer -->
+     <footer>
+
+          <nav class="navbar navbar-light" id="footer">
+
+               <div>
+
+                    <p class="direito-autoral">© 2024 CR84PUBLICIDADE - Tecnologia da InformaçãoA cópia total ou parcial
+                         do conteúdo deste site sem a permissão de seus idealizadores é crime previsto na Lei de
+                         Direitos Autorais</p>
+
+               </div>
+
+          </nav>
+
+     </footer>
+     <!-- Fim do Footer -->
+
+
+     <!-- JavaScript (Opcional) -->
+     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+          crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+          integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+          crossorigin="anonymous"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+          integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+          crossorigin="anonymous"></script>
+
+
+
+     <% if (erro != undefined) { %>
+          <script>
+               alert('Valores necesssarios não informados!');
+          </script>
+     <% } %>
+</body>
+
+</html>

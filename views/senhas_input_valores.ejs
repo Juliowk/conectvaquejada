@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+     <!-- Meta tags Obrigatórias -->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+     <!-- CSS Básico -->
+     <link rel="stylesheet" href="/stylesheets/basico.css">
+     <!-- CSS temp_adc_vaquejada -->
+     <link rel="stylesheet" href="/stylesheets/adicionar_vaquejada_bd.css">
+     <!-- CSS senhas_input_valores.css -->
+     <link rel="stylesheet" href="/stylesheets/senhas_input_valores.css">
+
+     <title>Adicionar vaquejada</title>
+
+</head>
+
+<body>
+
+     <header>
+
+          <!-- Navegação -->
+          <nav class="navbar navbar-expand-lg navbar-dark">
+               <a href="/" class="navbar-brand">
+                    <img src="/images/logos/conect_logo.png" alt="">
+               </a>
+
+               <!-- Navbar-links -->
+               <div class="collapse navbar-collapse justify-content-around">
+                    <div class="navbar-nav">
+                         <a href="/" class="nav-item nav-link active mr-5">INICIO</a>
+                         <a href="/vaquejadas" class="nav-item nav-link mr-5">VAQUEJADAS</a>
+                         <a href="#" class="nav-item nav-link mr-5">RESULTADOS</a>
+                         <a href="#" class="nav-item nav-link mr-5">CONTATO</a>
+                         <a href="/login" class="btn mr-5 botão" style="width: 133px;">ENTRAR</a>
+                    </div>
+               </div>
+               <!-- Fim do navbar links -->
+          </nav>
+          <!-- Fim da navegação -->
+
+     </header>
+
+     <section>
+
+          <div class="container">
+
+               <div class="row justify-content-center align-items-center">
+
+                    <div class="col">
+
+                         <form method="POST" action="/operations/adicionarSenhas?id=<%= vaquejada_id %>"
+                              enctype="multipart/form-data" class="texto">
+
+                              <% for (const categoria of categorias) { %>
+
+                                   <h1 class="nomeCategoria">
+                                        <%= categoria.nome %>:
+                                             <span class="quantidadeDeSenhas">
+                                                  (<%= categoria.quantidade_de_senhas %> senhas)
+                                             </span>
+                                   </h1>
+
+                                   <div class="containerSenhas">
+
+                                        <% for (let i=0; i < categoria.quantidade_de_senhas; i++) { %>
+
+                                             <div class="form-row cadaSenha">
+
+                                                  <div class="form-group col">
+                                                       <label
+                                                            for="numeroDaSenha-<%= categoria.nome %>-<%= i %>">NÚMERO:</label>
+
+                                                       <!-- numeroDaSenha[Profissional-0]-->
+                                                       <input type="number"
+                                                            id="numeroDaSenha-<%= categoria.nome %>-<%= i %>"
+                                                            class="form-control inputs-formularios"
+                                                            name="numeroDaSenha[<%= categoria.nome %>-<%= i %>]"
+                                                            value="<%= i+1 %>" readonly>
+
+                                                  </div>
+
+                                                  <div class="form-group col">
+
+                                                       <label for="preco-<%= categoria.nome %>-<%= i %>">PREÇO:</label>
+
+                                                       <!-- preco[Profissional-0] -->
+                                                       <input type="number" id="preco-<%= categoria.nome %>-<%= i %>"
+                                                            class="form-control inputs-formularios"
+                                                            name="preco[<%= categoria.nome %>-<%= i %>]"
+                                                            value="<%= categoria.preçoPadrão %>" min="0">
+
+                                                  </div>
+
+                                                  <div class="form-group col">
+                                                       <label for="statusDaSenha-<%= categoria.nome %>-<%= i %>">STATUS:
+                                                       </label>
+
+                                                       <!-- statusDaSenha[Profssional-0] -->
+                                                       <select id="statusDaSenha-<%= categoria.nome %>-<%= i %>"
+                                                            name="statusDaSenha[<%= categoria.nome %>-<%= i %>]"
+                                                            class="form-control inputs-formularios">
+                                                            <option value="DISPONIVEL" selected>DISPONIVEL</option>
+                                                            <option value="RESERVADA">RESERVADA</option>
+                                                       </select>
+                                                  </div>
+
+                                             </div>
+                                             <% } %>
+                                   </div>
+                                   <% } %>
+                                        <div class="form-row">
+                                             <div class="col-12">
+                                                  <button type="submit" class="btn btnConfirmar">CONFIRMAR</button>
+                                             </div>
+                                        </div>
+                         </form>
+
+                    </div>
+
+               </div>
+
+          </div>
+
+     </section>
+
+     <!-- JavaScript (Opcional) -->
+     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+          crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+          integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+          crossorigin="anonymous"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+          integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+          crossorigin="anonymous"></script>
+</body>
+
+</html>

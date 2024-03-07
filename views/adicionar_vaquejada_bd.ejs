@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+     <!-- Meta tags Obrigatórias -->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+     <!-- CSS Básico -->
+     <link rel="stylesheet" href="/stylesheets/basico.css">
+     <!-- CSS temp_adc_vaquejada -->
+     <link rel="stylesheet" href="/stylesheets/adicionar_vaquejada_bd.css">
+
+     <title>Adicionar vaquejada</title>
+
+</head>
+
+<body>
+
+     <header>
+
+          <!-- Navegação -->
+          <nav class="navbar navbar-expand-lg navbar-dark">
+               <a href="/adm" class="navbar-brand">
+                    <img src="/images/logos/conect_logo.png" alt="" style="margin-right: 260px;">
+               </a>
+
+               <!-- Navbar-links -->
+               <div class="collapse navbar-collapse justify-content-around">
+                    <div class="navbar-nav ml-5">
+                         <a href="/adm" class="nav-item nav-link mr-5">INICIO</a>
+                         <a href="/vaquejadasParaAdms" class="nav-item nav-link mr-5">VAQUEJADAS</a>
+                         <a href="/operations/deslogar" class="btn mr-5 botão" style="width: 133px;">DESLOGAR</a>
+                    </div>
+               </div>
+               </div>
+               <!-- Fim do navbar links -->
+          </nav>
+          <!-- Fim da navegação -->
+
+     </header>
+
+     <section>
+
+          <div class="container-fluid">
+
+               <div class="row">
+
+                    <!-- coluna da imagem -->
+                    <div class="col-5">
+
+                         <img src="/images/textos/texto.png" alt="" class="texto-principal">
+
+                    </div>
+
+                    <div class="col-7">
+
+                         <!-- action="/operations/adicionar_vaquejadas" -->
+                         <form method="POST" action="/operations/adicionar_vaquejadas" enctype="multipart/form-data">
+
+                              <!-- Nome: <input type="text" name="name" /><br /> -->
+                              <div class="form-group texto">
+
+                                   <label for="nome-vaquejada">NOME DA VAQUEJADA:</label>
+                                   <input type="text" class="form-control inputs-formularios input_grande"
+                                        id="nome-vaquejada" name="nomeVaquejada">
+
+                              </div>
+
+                              <div class="form-row">
+
+                                   <div class="form-group col-5 texto">
+
+                                        <label for="nome-dono">NOME DO DONO:</label>
+                                        <input type="text" class="form-control inputs-formularios input_medio"
+                                             id="nome-dono" name="nomeDono">
+
+                                   </div>
+
+                                   <div class="form-group col-5 texto">
+
+                                        <label for="status">STATUS:</label>
+                                        <select id="status"
+                                             class="form-control inputs-formularios input_medio input-status"
+                                             name="status">
+                                             <option value="pendente">PENDENTE</option>
+                                             <option value="negado">NEGADO</option>
+                                             <option value="confirmado">CONFIRMADO</option>
+                                        </select>
+
+                                   </div>
+                              </div>
+
+
+                              <div class="form-row texto" id="files">
+
+                                   <div class="form-group col-5 custom-file">
+
+                                        <label for="photo">FOTO:</label><br>
+                                        <input type="file" name="photo" id="photo" />
+
+                                   </div>
+
+                                   <div class="form-group col-5 custom-file">
+
+                                        <label for="banner">BANNER:</label><br>
+                                        <input type="file" name="banner" id="banner" />
+
+                                   </div>
+                              </div>
+
+                              <div class="form-group texto">
+
+                                   <label for="descrição">DESCRIÇÃO:</label>
+                                   <textarea class="form-control inputs-formularios input_grande" rows="5"
+                                        name="descricaoVaquejada"
+                                        placeholder="Descreva o melhor possivel sua vaquejada!"></textarea>
+
+                              </div>
+
+                              <!-- CATEGORIAS: -->
+
+                              <div class="form-row texto">
+
+                                   <div class="form-group col">
+
+                                        <label for="numero-categorias">NÚMERO DE CATEGORIAS:</label>
+                                        <input type="number" class="form-control inputs-formularios input_grande"
+                                             id="numero-categorias" name="numero_categorias"
+                                             placeholder="Digite o numero de categorias">
+
+                                   </div>
+
+                              </div>
+
+                              <div class="form-row texto">
+
+                                   <div id="input-categorias-nomes">
+
+                                        <!-- INPUTS DE INFORMAÇÕES PARA CADA CATEGORIA -->
+
+                                   </div>
+
+
+                              </div>
+
+                              <div class="form-row">
+
+                                   <input type="submit" class="btn btn-env" value="ADICIONAR VAQUEJADA"></input>
+
+                              </div>
+
+                         </form>
+                    </div>
+
+
+
+               </div>
+
+          </div>
+
+          </div>
+
+          </div>
+
+     </section>
+
+     <script src="/javascripts/input-categorias.js"></script>
+
+     <!-- JavaScript (Opcional) -->
+     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+          crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+          integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+          crossorigin="anonymous"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+          integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+          crossorigin="anonymous"></script>
+
+
+     <% if (erro==='ErroNasSenhas' ) { %>
+          <script>
+               alert('Erro! Adicione a vaquejada novamente!');
+          </script>
+          <% } else if (erro !=undefined) { %>
+               <script>
+                    alert('Campos incompletos!')
+               </script>
+               <% } %>
+</body>
+
+</html>

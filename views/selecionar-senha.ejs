@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+     <!-- Meta tags Obrigatórias -->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+     <!-- CSS básico -->
+     <link rel="stylesheet" href="/stylesheets/basico.css">
+
+     <!-- selecionar-senha css -->
+     <link rel="stylesheet" href="/stylesheets/selecionar-senha.css">
+
+     <title>
+          <%= vaquejada.nome %>
+     </title>
+</head>
+
+<body>
+     <header>
+
+          <!-- Navegação -->
+          <nav class="navbar navbar-expand-lg navbar-dark">
+               <a href="/" class="navbar-brand">
+                    <img src="/images/logos/conect_logo.png" alt="">
+               </a>
+
+               <!-- Navbar-links -->
+               <div class="collapse navbar-collapse justify-content-around">
+                    <div class="navbar-nav">
+                         <a href="/" class="nav-item nav-link active mr-5">INICIO</a>
+                         <a href="/vaquejadas" class="nav-item nav-link mr-5">VAQUEJADAS</a>
+                         <a href="#" class="nav-item nav-link mr-5">RESULTADOS</a>
+                         <a href="#" class="nav-item nav-link mr-5">CONTATO</a>
+                         <a href="/login" class="btn mr-5 botão" style="width: 133px;">ENTRAR</a>
+                    </div>
+               </div>
+               <!-- Fim do navbar links -->
+          </nav>
+          <!-- Fim da navegação -->
+
+     </header>
+
+     <section>
+
+          <% if (vaquejada) { %>
+
+               <div class="container">
+
+                    <!-- Corousel -->
+                    <div id="carousel" class="carousel slide" data-ride="carousel">
+                         <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                   <img class="d-block w-100 img-banner" src="/images/banner/<%= vaquejada.banner %>"
+                                        alt="Primeiro Slide">
+                              </div>
+                         </div>
+                    </div>
+
+                    <div>
+
+                         <div class="row selecionar-categoria">
+                              <h3 class="texto texto-h3">SELECIONE SUA CATEGORIA:</h3>
+                         </div>
+
+                         <div class="row radios selecionar-radios">
+
+                              <form class="texto input-radios" id="formulario-categorias">
+
+                                   <div class="form-row">
+
+                                        <div class="col-12">
+
+                                             <% if (idCategoria) { %>
+
+                                                  <% for (const nomeCategoria of nomeCategorias) { %>
+
+                                                       <% if (idCategoria==nomeCategoria.id) { %>
+                                                            <!-- Opção de categoria selecionada -->
+                                                            <div class="form-check form-check-inline mr-5">
+
+                                                                 <label class="form-check-label"
+                                                                      for="<%= nomeCategoria.nome %>">
+                                                                      <%= nomeCategoria.nome %>
+                                                                 </label>
+
+                                                                 <input checked class="form-check-input" type="radio"
+                                                                      name="categorias" id="<%= nomeCategoria.nome %>"
+                                                                      value="<%= nomeCategoria.id %>"
+                                                                      onclick="window.location.href='/renderizar-senhas?idVaquejada=<%= vaquejada.id %>&idCategoria=<%= nomeCategoria.id %>'">
+
+                                                            </div>
+
+                                                            <% } else { %>
+
+                                                                 <!-- Outras opções de categoria -->
+                                                                 <div class="form-check form-check-inline mr-5">
+
+                                                                      <label class="form-check-label"
+                                                                           for="<%= nomeCategoria.nome %>">
+                                                                           <%= nomeCategoria.nome %>
+                                                                      </label>
+
+                                                                      <input class="form-check-input" type="radio"
+                                                                           name="categorias"
+                                                                           id="<%= nomeCategoria.nome %>"
+                                                                           value="<%= nomeCategoria.id %>"
+                                                                           onclick="window.location.href='/renderizar-senhas?idVaquejada=<%= vaquejada.id %>&idCategoria=<%= nomeCategoria.id %>'">
+
+                                                                 </div>
+
+                                                                 <% } %>
+
+                                                                      <% } %>
+
+                                                                           <% } else { %>
+
+                                                                                <!-- Se não houver idCategoria selecionada -->
+                                                                                <% for (const nomeCategoria of
+                                                                                     nomeCategorias) { %>
+
+                                                                                     <div
+                                                                                          class="form-check form-check-inline mr-5">
+                                                                                          <label
+                                                                                               class="form-check-label"
+                                                                                               for="<%= nomeCategoria.nome %>">
+                                                                                               <%= nomeCategoria.nome %>
+                                                                                          </label>
+                                                                                          <input
+                                                                                               class="form-check-input"
+                                                                                               type="radio"
+                                                                                               name="categorias"
+                                                                                               id="<%= nomeCategoria.nome %>"
+                                                                                               value="<%= nomeCategoria.id %>"
+                                                                                               onclick="window.location.href='/renderizar-senhas?idVaquejada=<%= vaquejada.id %>&idCategoria=<%= nomeCategoria.id %>'">
+                                                                                     </div>
+
+                                                                                     <% } %>
+
+                                                                                          <% } %>
+
+
+                                        </div>
+
+                                   </div>
+
+                              </form>
+
+                         </div>
+
+                         <!-- botões das senhas -->
+                         <div class="row">
+                              <% if (idCategoria) { %>
+
+                                   <% for (const senha of senhas) { %>
+
+                                        <% if (senha.categoria_id==idCategoria) { %>
+
+                                             <% if (senha.status=='RESERVADA' ) { %>
+
+                                                  <div class="col ">
+
+                                                       <div class="btn btn-senha btn-reservada">
+                                                            <%= senha.numero %>
+                                                       </div>
+
+                                                  </div>
+
+                                                  <% } else if (senha.status=='CONFIRMADA' ) { %>
+
+                                                       <div class="col botãohover">
+
+                                                            <div class="nomeHover btn btn-senha initial-width">
+                                                                 <span style="font-size: 19px;">
+                                                                      <%= senha.nomeComprador %>
+                                                                 </span>
+                                                            </div>
+
+                                                            <div class="btn btn-senha btn-confirmado">
+                                                                 <%= senha.numero %>
+                                                            </div>
+
+                                                       </div>
+
+                                                       <% } else { %>
+
+                                                            <div class="col">
+
+                                                                 <a href="/cadastro-de-compra?idVaquejada=<%= vaquejada.id %>&senha=<%= senha.id %>"
+                                                                      class="btn btn-senha btn-disponivel">
+                                                                      <%= senha.numero %>
+                                                                 </a>
+
+                                                            </div>
+
+                                                            <% } %>
+
+                                                                 <% } %>
+
+                                                                      <% } %>
+                                                                           <% } %>
+                         </div>
+                         <!-- fim do bitões -->
+
+                         <div class="row row-regras">
+                              <div class="col-md-6">
+                                   <h3 class="texto texto-h3 margin-titulos">REGRAS</h3>
+
+                                   <p class="texto">
+                                        - Não haverá encaixe de senhas <br>
+                                        - Não haverá rabo da gata <br>
+                                        - Senhas só saem de um rodízio para o outro. <br>
+                                        - Uso Obrigatório de capacete <br>
+                                        - Queda do cavalo de puxar é retorno <br>
+                                        - Luva padrão <br>
+                                        - seguir todas as recomendações da equipe veterinária responsável
+                                        pelo bem estar
+                                        animal no
+                                        evento.
+                                   </p>
+
+                              </div>
+                              <div class="col-md-6">
+                                   <h3 class="texto texto-h3 margin-titulos">ORDEM DA CORRIDA </h3>
+                                   <p class="texto">
+                                        SÁBADO 02/03 <br>
+                                        16h - Classificação do Amador, Aspirante, Regional, Master, Jovem
+                                        e Feminino (1.001 a
+                                        1.300)- Derby (6.001 a 6.100) - 3 senhas por ordem numérica
+                                   </p>
+                              </div>
+                         </div>
+                    </div>
+
+                    <% } %>
+
+     </section>
+
+     <footer>
+          <nav class="navbar navbar-light" id="footer">
+               <div>
+                    <p class="direito-autoral">© 2024 CR84PUBLICIDADE - Tecnologia da InformaçãoA cópia total ou parcial
+                         do conteúdo deste site sem a permissão de seus idealizadores é crime previsto na Lei de
+                         Direitos Autorais</p>
+               </div>
+          </nav>
+     </footer>
+
+
+     <!-- input_radios_categoria JAVASCRIPT -->
+     <script src="/javascripts/input_radios_categoria.js"></script>
+
+     <!-- JavaScript (Opcional) -->
+     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+          crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+          integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+          crossorigin="anonymous"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+          integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+          crossorigin="anonymous"></script>
+
+     <% if (msgComprador) { %>
+          <script>
+               document.addEventListener("DOMContentLoaded", function () {
+
+                    alert("<%= msgComprador %>");
+
+               })
+          </script>
+          <% } %>
+</body>
+
+</html>

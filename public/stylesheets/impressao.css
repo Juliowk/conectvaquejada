@@ -1,0 +1,54 @@
+.containerBody {
+     display: flex;
+     flex-direction: column;
+     height: 100vh;
+     background-color: #00266F;
+}
+
+.containerBody section {
+     flex: 1 1 0;
+     border: 0;
+}
+
+footer {
+     margin-top: 30px;
+}
+
+.navbar-brand {
+     margin-left: 250px;
+}
+
+.logo {
+     width: 500px;
+     margin-left: 40px;
+}
+
+.linkSair {
+     color: #FFF;
+     font-size: 20px;
+}
+
+.input-formulario {
+     height: 37px;
+     font-size: 19px;
+     background: rgba(255, 255, 255, 0.70);
+     box-shadow: rgba(255, 255, 255, 0.70);
+}
+
+
+.form-fixos {
+     text-align: center;
+     font-size: 25px;
+}
+
+.divFormularios {
+     margin-top: 50px;
+}
+
+.input-formulario {
+     text-align: center;
+}
+
+.links {
+     margin-top: 30px;
+}

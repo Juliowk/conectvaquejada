@@ -1,0 +1,68 @@
+:root {
+     --cor-principal: rgba(255, 255, 255, 0.70);
+     --cor-azul: rgba(255, 255, 255, 0.1);
+}
+
+.texto-principal {
+     width: 334px;
+     height: 161px;
+     margin-top: 120px;
+     margin-left: 150px;
+}
+
+.inputs-formularios {
+     height: 37px;
+     font-size: 17px;
+     background: var(--cor-principal) !important;
+     box-shadow: var(--cor-principal);
+}
+
+.input_medio {
+     width: 100%;
+}
+
+.input_grande {
+     width: 80%;
+}
+
+.input-status {
+     width: 92%;
+}
+
+
+.btn-env {
+     background: var(--cor-principal);
+     box-shadow: var(--cor-principal);
+}
+
+#files {
+     margin-bottom: 50px;
+     margin-top: 10px;
+}
+
+.custom-file-label {
+     margin-left: 5px;
+     margin-right: 5px;
+     background-color: var(--cor-principal);
+}
+
+.novas-categorias {
+     margin-bottom: 20px;
+     border-top: solid var(--cor-azul);
+     border-bottom: solid var(--cor-azul);
+     padding-top: 10px;
+     padding-bottom: 10px;
+     border-radius: 20px;
+}
+
+form {
+     margin-bottom: 100px;
+}
+
+.col-7 {
+     margin-top: 50px;
+}
+
+.inputs-informações-categorias {
+     width: 150px;
+}

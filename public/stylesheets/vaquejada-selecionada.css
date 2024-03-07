@@ -1,0 +1,74 @@
+:root {
+     --cor-background: #00266F;
+     --cor-texto: #FFFFFF;
+     --cor-footer: #0671EF;
+}
+
+body {
+     background-color: var(--cor-background);
+}
+
+#carousel {
+     margin-bottom: 20px;
+}
+
+.texto {
+     color: var(--cor-texto);
+     font-size: 15px;
+     font-style: normal;
+     font-weight: 400;
+     line-height: normal;
+}
+
+.texto-h3 {
+     font-weight: 700;
+}
+
+
+.col-md-6 img {
+     width: 540px;
+     height: 150px;
+}
+
+.btn-categoria {
+     width: 210px;
+     margin-left: 330px;
+}
+
+.selecionar {
+     margin-top: 8px;
+}
+
+.texto-selecione {
+     padding-top: 10px;
+}
+
+section {
+     margin-bottom: 30px;
+}
+
+#footer {
+     background-color: var(--cor-footer);
+     height: 60px;
+}
+
+.direito-autoral {
+     width: 677px;
+     padding-top: 8px;
+     color: #FFF;
+     font-size: 12px;
+     font-style: normal;
+     font-weight: 400;
+     line-height: normal;
+     margin-left: 119px;
+}
+
+.img-banner {
+     height: 410px;
+     object-fit: cover;
+     object-position: top;
+}
+
+.gif-img {
+     object-fit: cover;
+}

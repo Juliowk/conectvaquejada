@@ -1,0 +1,63 @@
+:root {
+     --cor-adicionar-vaquejada: rgba(217, 217, 217, 0.50);
+     --cor-circulo: #D9D9D9;
+     --cor-mais: #000000;
+}
+
+.texto-principal {
+     width: 334px;
+     height: 161px;
+     margin-left: 100px;
+     margin-top: 40px;
+}
+
+.card {
+     width: 280px;
+     margin-bottom: 30px;
+     border: none;
+}
+
+.card img {
+     height: 400px;
+     object-fit: cover;
+}
+
+.row {
+     margin-bottom: 30px;
+}
+
+.adicionar-vaquejada {
+     width: 280px;
+     height: 400px;
+     background-color: var(--cor-adicionar-vaquejada);
+}
+
+.circulo {
+     width: 100px;
+     height: 100px;
+     border-radius: 50%;
+     background-color: var(--cor-circulo);
+     text-align: center;
+     margin: 0 auto;
+     margin-top: 50%;
+     font-size: 60px;
+}
+
+a {
+     text-decoration: none;
+     color: var(--cor-mais);
+}
+
+a:hover {
+     color: var(--cor-mais);
+     text-decoration: none;
+}
+
+.texto-circulo {
+     color: #D9D9D9;
+     margin-top: 85%;
+}
+
+.container-fluid {
+     margin-top: 40px;
+}

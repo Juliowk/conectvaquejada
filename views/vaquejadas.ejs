@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+     <!-- Meta tags Obrigatórias -->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+     <!-- CSS BASE -->
+     <link rel="stylesheet" href="/stylesheets/basico.css">
+     <!-- vaquejadas CSS -->
+     <link rel="stylesheet" href="/stylesheets/vaquejadas.css">
+
+     <title>Vaquejadas</title>
+</head>
+
+<body>
+     <header>
+
+          <!-- Navegação -->
+          <nav class="navbar navbar-expand-lg navbar-dark">
+               <a href="/" class="navbar-brand">
+                    <img src="/images/logos/conect_logo.png" alt="">
+               </a>
+
+               <!-- Navbar-links -->
+               <div class="collapse navbar-collapse justify-content-around">
+                    <div class="navbar-nav">
+                         <a href="/" class="nav-item nav-link active mr-5">INICIO</a>
+                         <a href="/vaquejadas" class="nav-item nav-link mr-5">VAQUEJADAS</a>
+                         <a href="#" class="nav-item nav-link mr-5">RESULTADOS</a>
+                         <a href="#" class="nav-item nav-link mr-5">CONTATO</a>
+                         <a href="/login" class="btn mr-5 botão" style="width: 133px;">ENTRAR</a>
+                    </div>
+               </div>
+               <!-- Fim do navbar links -->
+          </nav>
+          <!-- Fim da navegação -->
+
+     </header>
+
+     <section>
+          <div class="container-fluid">
+               <div class="row">
+
+                    <!-- coluna da imagem -->
+                    <div class="col-4">
+                         <img src="/images/textos/texto.png" alt="" class="texto-principal">
+                    </div>
+
+                    <!-- Cards -->
+                    <div class="col-8 cards">
+
+                         <div class="row">
+
+                              <% for (const vaquejada of vaquejadasConfirmadas) { %>
+
+                                   <div class="col-4">
+                                        <a href="/vaquejada-selecionada?id=<%= vaquejada.id %>">
+                                             <div class="card">
+                                                  <img src="/images/cards/<%= vaquejada.foto %>" alt=""
+                                                       class="card-img-top">
+                                             </div>
+                                        </a>
+                                   </div>
+
+                                   <% } %>
+
+
+                                        <!-- Adicionar vaquejada -->
+                                        <div class="col-4">
+                                             <a href="/adicionar-vaquejada">
+                                                  <div class="card adicionar-vaquejada">
+                                                       <div class="circulo">+</div>
+                                                       <div class="card-img-overlay text-center texto-circulo">
+                                                            <h4>Divulgue sua Vaquejada!</h4>
+                                                       </div>
+                                                  </div>
+                                             </a>
+                                        </div>
+                                        <!-- Adicionar vaquejada  -->
+
+                         </div>
+
+                    </div>
+               </div>
+          </div>
+          </div>
+     </section>
+
+     <!-- JavaScript (Opcional) -->
+     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+          crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+          integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+          crossorigin="anonymous"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+          integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+          crossorigin="anonymous"></script>
+</body>
+
+</html>

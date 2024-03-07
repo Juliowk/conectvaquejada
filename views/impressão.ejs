@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+     <!-- Meta tags Obrigatórias -->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+     <!-- CSS Básico -->
+     <link rel="stylesheet" href="/stylesheets/basico.css">
+     <!-- CSS EMPRESSÃO -->
+     <link rel="stylesheet" href="/stylesheets/impressao.css">
+
+     <style>
+          @media print {
+               body>*:not(section) {
+                    display: none;
+               }
+
+               .divFormularios:nth-of-type(3n+1) {
+                    page-break-after: always;
+               }
+          }
+     </style>
+
+     <title>
+          Vaquejada nome
+     </title>
+</head>
+
+<body class="containerBody">
+
+     <!-- Navegação -->
+     <nav class="container">
+
+          <a href="/adm" class="navbar-brand">
+               <img src="/images/logos/conect_logo.png" alt="" class="logo">
+          </a>
+
+
+          <div style="text-align: center;" class="links">
+               <p>
+                    ||
+                    <a style="color: #FFF;" href="/impressao/<%= idVaquejada %>?render=sc">Senhas Confirmadas</a> ||
+                    <a style="color: #FFF;" href="/impressao/<%= idVaquejada %>?render=sr">Senhas Reservadas</a> ||
+                    <a style="color: #FFF;" href="/impressao/<%= idVaquejada %>">Todas as Senhas</a> ||
+               </p>
+          </div>
+
+     </nav>
+     <!-- Fim da navegação -->
+
+     <section class="container">
+
+          <% for (const senha of senhasEnvio) { %>
+
+
+               <div class="row divFormularios">
+
+                    <form action="#" style="width: 100%;">
+
+                         <div>
+
+                              <div class="form-row">
+
+                                   <div class="form-group col-4">
+                                        <label for="numeroSenha" class="col-form-label texto">Nº
+                                             SENHA:</label>
+
+                                        <input type="text" readonly class="form-control-plaintext input-formulario"
+                                             id="numeroSenha" value="<%= senha.numero %>" name="">
+                                   </div>
+
+                                   <div class="form-group col-4">
+                                        <label for="status" class="texto col-form-label">STATUS:</label>
+                                        <input readonly type="text" class="form-control-plaintext input-formulario"
+                                             id="status" name="status" value="<%= senha.status %>">
+                                   </div>
+
+
+                                   <div class="form-group col-4">
+                                        <label for="categoriaSenha" class=" col-form-label texto">CATEGORIA:</label>
+                                        <input type="text" readonly class="form-control-plaintext input-formulario"
+                                             id="categoriaSenha" value="<%= senha.nomeCategoria %>" name="">
+                                   </div>
+
+                              </div>
+
+                              <div class="form-row">
+
+                                   <div class="form-group col-6">
+                                        <label for="nomeCompleto" class="texto ">NOME
+                                             COMPLETO:</label>
+                                        <input readonly type="text" class="form-control-plaintext input-formulario"
+                                             id="nomeCompleto" name="nomeCompleto" value="<%= senha.nomeComprador %>">
+                                   </div>
+
+                                   <div class="form-group col-6">
+                                        <label for="cpf" class="texto ">CPF:</label>
+                                        <input readonly type="text" class="form-control-plaintext input-formulario"
+                                             id="cpf" name="cpf" value="<%= senha.cpfComprador %>">
+                                   </div>
+
+                              </div>
+
+                              <div class="form-row">
+
+                                   <div class="form-group col">
+                                        <label for="apelido" class="texto ">APELIDO:</label>
+                                        <input readonly type="text" class="form-control-plaintext  input-formulario"
+                                             id="apelido" name="apelido" value="<%= senha.apelido %>">
+                                   </div>
+
+                                   <div class="form-group col">
+                                        <label for="cidade" class="texto ">CIDADE:</label>
+                                        <input readonly type="text" class="form-control-plaintext input-formulario"
+                                             id="cidade" name="cidade" value="<%= senha.cidade %>">
+                                   </div>
+
+                                   <div class="form-group col">
+                                        <label for="estado" class="texto ">ESTADO:</label>
+                                        <input readonly type="text" class="form-control-plaintext input-formulario"
+                                             id="estado" name="estado" value="<%= senha.estado %>">
+                                   </div>
+
+                              </div>
+
+                              <div class="form-row">
+
+                                   <div class="form-group col">
+                                        <label for="cavaloPuxador" class="texto ">NOME DO
+                                             CAVALO
+                                             (Puxador):</label>
+                                        <input readonly type="text" class="form-control-plaintext input-formulario"
+                                             id="cavaloPuxador" name="cavaloPuxador" value="<%= senha.cavaloPuxador %>">
+                                   </div>
+
+                                   <div class="form-group col">
+                                        <label for="esteira" class="texto ">ESTEIRA:</label>
+                                        <input readonly type="text" class="form-control-plaintext input-formulario"
+                                             id="estreira" name="esteira" value="<%= senha.esteira %>">
+                                   </div>
+
+                                   <div class="form-group col">
+                                        <label for="cavaloEsteira" class="texto ">NOME DO
+                                             CAVALO
+                                             (Esteira):</label>
+                                        <input readonly type="text" class="form-control-plaintext input-formulario"
+                                             id="cavaloEsteira" name="cavaloEsteira" value="<%= senha.cavaloEsteira %>">
+                                   </div>
+
+                              </div>
+
+                              <div class="form-row">
+
+                                   <div class="form-group col-6">
+                                        <label for="representacao" class="texto ">REPRESENTAÇÃO:</label>
+                                        <input readonly type="text" class="form-control-plaintext input-formulario"
+                                             id="representacao" name="representacao" value="<%= senha.representacao %>">
+                                   </div>
+
+
+                              </div>
+
+
+                         </div>
+
+                    </form>
+
+
+               </div>
+
+
+               <% } %>
+
+
+     </section>
+
+
+
+     <!-- Inicio Footer -->
+     <footer>
+
+          <nav class="navbar navbar-light" id="footer">
+
+               <div>
+
+                    <p class="direito-autoral">© 2024 CR84PUBLICIDADE - Tecnologia da InformaçãoA cópia total
+                         ou parcial
+                         do conteúdo deste site sem a permissão de seus idealizadores é crime previsto na Lei
+                         de
+                         Direitos Autorais
+                    </p>
+
+               </div>
+
+          </nav>
+
+     </footer>
+     <!-- Fim do Footer -->
+
+
+     <!-- JavaScript (Opcional) -->
+     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+          crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+          integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+          crossorigin="anonymous"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+          integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+          crossorigin="anonymous"></script>
+</body>
+
+</html>

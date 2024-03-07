@@ -1,0 +1,51 @@
+:root {
+     --cor-background: #00266F;
+     --cor-background-container: #D9D9D9;
+     --cor-texto: #070707;
+}
+
+body {
+     background-color: var(--cor-background);
+}
+
+.container {
+     background-color: var(--cor-background-container);
+     width: 430px;
+     height: 450px;
+     border-radius: 30px;
+     padding: 90px 30px 20px 30px;
+     margin-top: 20px;
+     /* margin-top: 100px; */
+}
+
+.logo-img {
+     margin-left: 400px;
+     margin-top: 80px;
+}
+
+.logo {
+     width: 420px;
+}
+
+.texto-formulario {
+     color: var(--cor-texto);
+     font-size: 17px;
+}
+
+.radios {
+     margin-top: 30px;
+     margin-bottom: 40px;
+     font-size: 20px;
+     text-align: center;
+     font-weight: 400;
+}
+
+.btn-entrar {
+     width: 220px;
+     font-size: 25px;
+     margin-left: 80px;
+}
+
+.span-email {
+     font-size: 10px;
+}

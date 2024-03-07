@@ -1,0 +1,35 @@
+:root {
+     --cor-borda: rgba(255, 255, 255, 0.2);
+     --cor-botão: rgba(255, 255, 255, 0.638);
+}
+
+.col-8 {
+     margin-top: 50px;
+}
+
+.quantidadeDeSenhas {
+     font-size: 15px;
+     opacity: 0.5;
+}
+
+.containerSenhas {
+     border: solid var(--cor-borda);
+     border-radius: 20px;
+     padding: 20px;
+     margin-bottom: 40px;
+}
+
+.cadaSenha {
+     margin-top: 10px;
+     margin-bottom: 10px;
+}
+
+.nomeCategoria {
+     text-align: center;
+     text-transform: capitalize;
+}
+
+.btnConfirmar {
+     background-color: var(--cor-botão);
+     width: 100%;
+}

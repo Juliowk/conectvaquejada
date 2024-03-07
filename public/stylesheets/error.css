@@ -1,0 +1,33 @@
+:root {
+     --cor-background: #070707;
+}
+
+body {
+     background-color: var(--cor-background);
+}
+
+.container {
+     text-align: center;
+     color: white;
+     width: 900px;
+     margin-top: 10px;
+}
+
+.imglogo {
+     width: 500px;
+}
+
+
+.codigoErro {
+     font-size: 400px;
+     font-weight: 700;
+}
+
+p {
+     font-size: 20px;
+}
+
+a {
+     color: #D9D9D9;
+     text-decoration: underline;
+}

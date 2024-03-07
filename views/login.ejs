@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+     <!-- Meta tags Obrigatórias -->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+     <!-- CSS Básico -->
+     <link rel="stylesheet" href="/stylesheets/basico.css">
+     <!-- CSS login -->
+     <link rel="stylesheet" href="/stylesheets/login.css">
+
+     <title>Entrar</title>
+</head>
+
+<body>
+
+
+     <nav class="logo-img">
+          <a href="/" class="navbar-brand">
+               <img class="logo" src="/images/logos/conect_logo.png" alt="">
+          </a>
+     </nav>
+
+     <section class="container">
+
+          <form method="post" action="/operations/login" enctype="multipart/form-data">
+
+               <div class="form-group">
+
+                    <label for="email" class="texto-formulario">CPF: <span class="span-email">(ou
+                              email)</span></label>
+                    <input type="text" class="form-control" id="email" name="cpf" placeholder="000.000.000-00">
+
+               </div>
+
+               <div class="form-group">
+
+                    <label for="senha" class="texto-formulario">Senha:</label>
+                    <input type="password" class="form-control" id="senha" name="senha">
+
+               </div>
+
+               <div class="form-group form-check radios">
+
+                    <div class="form-check form-check-inline">
+
+                         <input class="form-check-input" type="radio" name="opcao_login" id="vaqueiro" value="vaqueiro">
+
+                         <label class="form-check-label" for="vaqueiro">Vaqueiro</label>
+
+
+                    </div>
+                    <div class="form-check form-check-inline">
+
+                         <input class="form-check-input" type="radio" name="opcao_login" id="administrador"
+                              value="administrador">
+
+                         <label class="form-check-label" for="administrador">Administrador</label>
+
+                    </div>
+
+               </div>
+
+               <button type="submit" class="btn botão btn-entrar">ENTRAR</button>
+          </form>
+     </section>
+
+     <footer>
+          <nav class="navbar navbar-light fixed-bottom" id="footer">
+               <div>
+                    <p class="direito-autoral">© 2024 CR84PUBLICIDADE - Tecnologia da InformaçãoA cópia total
+                         ou parcial
+                         do conteúdo deste site sem a permissão de seus idealizadores é crime previsto na Lei
+                         de
+                         Direitos Autorais</p>
+               </div>
+          </nav>
+     </footer>
+
+     <!-- JavaScript (Opcional) -->
+     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+          crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+          integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+          crossorigin="anonymous"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+          integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+          crossorigin="anonymous"></script>
+
+
+     <% if (erroDeLogin) { %>
+          <script>
+               document.addEventListener("DOMContentLoaded", () => {
+                    
+                    alert('<%= erroDeLogin %>');
+
+               });
+          </script>
+     <% } %>
+
+</body>
+
+</html>

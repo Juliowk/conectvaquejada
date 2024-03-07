@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+     <!-- Meta tags Obrigatórias -->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+     <!--CSS Basico -->
+     <link rel="stylesheet" href="/stylesheets/basico.css">
+     <!-- CSS senhas.css -->
+     <link rel="stylesheet" href="/stylesheets/senhas.css">
+
+     <title>Senhas</title>
+</head>
+
+<body>
+
+     <!-- JavaScript (Opcional) -->
+     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+          crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+          integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+          crossorigin="anonymous"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+          integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+          crossorigin="anonymous"></script>
+</body>
+
+<header>
+
+     <!-- Navegação -->
+     <nav class="navbar navbar-expand-lg navbar-dark">
+          <a href="/adm" class="navbar-brand">
+               <img src="/images/logos/conect_logo.png" alt="">
+          </a>
+
+          <!-- Navbar-links -->
+          <div class="collapse navbar-collapse justify-content-around">
+               <div class="navbar-nav">
+                    <a href="#" class="nav-item nav-link mr-5">RESULTADO</a>
+                    <a href="/senhas_config/<%= vaquejadaId %>" class="nav-item nav-link mr-5">CONFIRMAR SENHAS</a>
+                    <a href="/operations/deslogar" class="nav-item nav-link mr-5">DESLOGAR</a>
+                    <a href="/login" class="btn mr-5 botão" style="width: 133px;">ENTRAR</a>
+               </div>
+          </div>
+          <!-- Fim do navbar links -->
+     </nav>
+     <!-- Fim da navegação -->
+
+</header>
+
+<section>
+
+     <!-- Link de voltar -->
+     <div class="container" id="voltar">
+
+          <div class="row">
+               <div class="col-10"></div>
+               <div class="col-1">
+
+                    <a href="/adm" class="textos">Inicio</a>
+
+               </div>
+               <div class="col-1">
+
+                    <a href="/voltarDasSenhas/<%= vaquejadaId %>" class="textos">Voltar</a>
+
+               </div>
+          </div>
+     </div>
+
+     <!-- Senhas reservadas -->
+     <div class="container">
+
+          <h3 class="textos titulos">SENHAS RESERVADAS:</h3>
+
+          <!-- Para cada categoria -->
+          <% for ( const categoria of categorias ) { %>
+
+               <!-- Container geral -->
+               <div class="row categoria">
+
+                    <!-- Mapa de senhas reservadas -->
+                    <div class="col">
+
+                         <h1 class="nomeDaCategoria textos">
+                              <%= categoria.nome %>:
+                         </h1>
+
+                         <div class="row" style="width: 100%;">
+
+                              <% if (senhasReservadas.length !=0) { %>
+
+
+                                   <% for ( const senha of senhasReservadas ) { %>
+
+                                        <% if ( senha.categoria_id==categoria.id ) { %>
+
+                                             <div class="col-1 senha">
+
+                                                  <a href="/confirmar_senha/<%= senha.id %>/<%= vaquejadaId %>"
+                                                       class="btn btn-senha btn-reservada">
+                                                       <%= senha.numero %>
+                                                  </a>
+
+                                             </div>
+
+                                             <% } %>
+
+                                                  <% } %>
+
+                                                       <% } else { %>
+                                                            <div class="col-12 textos" style="text-align: center;">
+                                                                 <p>Nenhuma senha reservada!</p>
+                                                            </div>
+                                                            <% } %>
+
+                         </div>
+
+                    </div>
+
+               </div>
+
+
+               <% } %>
+
+     </div>
+
+</section>
+
+
+<section>
+
+     <!-- Senhas confirmadas -->
+     <div class="container">
+
+          <h3 class="textos titulos">SENHAS CONFIRMADAS:</h3>
+
+          <!-- Para cada categoria -->
+          <% for ( const categoria of categorias ) { %>
+
+               <!-- Container geral -->
+               <div class="row categoria">
+
+                    <!-- Mapa de senhas confirmadas -->
+                    <div class="col">
+
+                         <h1 class="nomeDaCategoria textos">
+                              <%= categoria.nome %>:
+                         </h1>
+
+                         <div class="row" style="width: 100%;">
+
+                              <% if (senhasConfirmadas.length !=0) { %>
+
+
+                                   <% for ( const senha of senhasConfirmadas ) { %>
+
+                                        <% if ( senha.categoria_id==categoria.id ) { %>
+
+                                             <div class="col-1 senha">
+
+                                                  <a href="/confirmar_senha/<%= senha.id %>/<%= vaquejadaId %>"
+                                                       class="btn btn-senha btn-confirmado">
+                                                       <%= senha.numero %>
+                                                  </a>
+
+                                             </div>
+
+                                             <% } %>
+
+                                                  <% } %>
+
+                                                       <% } else { %>
+                                                            <div class="col-12 textos" style="text-align: center;">
+                                                                 <p>Nenhuma senha confirmada!</p>
+                                                            </div>
+                                                            <% } %>
+
+                         </div>
+
+                    </div>
+
+               </div>
+
+
+               <% } %>
+
+     </div>
+
+</section>
+
+<section>
+
+     <!-- Senhas disponiveis -->
+     <div class="container">
+
+          <h3 class="textos titulos">SENHAS DISPONIVEIS:</h3>
+
+          <!-- Para cada categoria -->
+          <% for ( const categoria of categorias ) { %>
+
+               <!-- Container geral -->
+               <div class="row categoria">
+
+                    <!-- Mapa de senhas disponiveis -->
+                    <div class="col">
+
+                         <h1 class="nomeDaCategoria textos">
+                              <%= categoria.nome %>:
+                         </h1>
+
+                         <div class="row" style="width: 100%;">
+
+                              <% if (senhasDisponiveis.length !=0) { %>
+
+
+                                   <% for ( const senha of senhasDisponiveis ) { %>
+
+                                        <% if ( senha.categoria_id==categoria.id ) { %>
+
+                                             <div class="col-1 senha">
+
+                                                  <a href="" class="btn btn-senha btn-disponivel">
+                                                       <%= senha.numero %>
+                                                  </a>
+
+                                             </div>
+
+                                             <% } %>
+
+                                                  <% } %>
+
+                                                       <% } else { %>
+                                                            <div class="col-12 textos" style="text-align: center;">
+                                                                 <p>Nenhuma senha disponivel!</p>
+                                                            </div>
+                                                            <% } %>
+
+                         </div>
+
+                    </div>
+
+               </div>
+
+
+               <% } %>
+
+     </div>
+
+</section>
+
+<footer>
+     <nav class="navbar navbar-light" id="footer">
+          <div>
+               <p class="direito-autoral">© 2024 CR84PUBLICIDADE - Tecnologia da InformaçãoA cópia total ou parcial
+                    do conteúdo deste site sem a permissão de seus idealizadores é crime previsto na Lei de
+                    Direitos Autorais</p>
+          </div>
+     </nav>
+</footer>
+
+<% if (erro) { %>
+     <script>
+          document.addEventListener("DOMContentLoaded", () => {
+               alert("Ocorreu um erro ao mudar o status da senha");
+          })
+     </script>
+<% } %>
+
+</html>

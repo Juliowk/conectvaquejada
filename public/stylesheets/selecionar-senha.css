@@ -1,0 +1,113 @@
+:root {
+     --cor-background: #00266F;
+     --cor-texto: #FFFFFF;
+     --cor-footer: #0671EF;
+     --cor-senha: #070707;
+     --cor-confirmado: #7BFF3D;
+     --cor-reservada: #FDF304;
+     --box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+body {
+     background-color: var(--cor-background);
+}
+
+
+#carousel {
+     margin-bottom: 20px;
+}
+
+.input-radios {
+     margin-top: 30px;
+     font-size: 18px;
+}
+
+.input-radios label {
+     margin-right: 15px;
+}
+
+.input-radios .col-11 {
+     padding-top: 10px;
+}
+
+.btn-comprar {
+     height: 40px;
+     width: 210px;
+}
+
+.row-regras {
+     margin-top: 80px;
+}
+
+.margin-titulos {
+     margin-bottom: 30px;
+}
+
+section {
+     margin-bottom: 30px;
+}
+
+.selecionar-categoria {
+     padding-left: 20px;
+}
+
+.texto-h3 {
+     font-size: 22px;
+}
+
+.selecionar-radios {
+     padding: 20px;
+     margin-bottom: 15px;
+}
+
+.btn-senha {
+     /* margin-top: 35px; */
+     width: 80px;
+     font-size: 20px;
+     border-radius: 20px;
+     background-color: var(--cor-texto);
+     color: var(--cor-senha);
+     margin-bottom: 20px;
+     box-shadow: var(--box-shadow);
+}
+
+.col-auto {
+     position: relative;
+     height: 80px;
+}
+
+.nomeHover {
+     position: absolute;
+     background-color: var(--cor-confirmado);
+     display: none;
+}
+
+.btn-confirmado {
+     background-color: var(--cor-confirmado);
+     cursor: default !important;
+}
+
+.btn-reservada {
+     background-color: var(--cor-reservada);
+     cursor: default !important;
+}
+
+.btn-disponivel {
+     background-color: white;
+}
+
+.botãohover:hover .nomeHover {
+     display: block;
+}
+
+.a-categorias {
+     text-decoration: none;
+     color: inherit;
+}
+
+.initial-width {
+     min-width: 110px;
+     white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
+}

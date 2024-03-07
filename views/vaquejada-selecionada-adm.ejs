@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+     <!-- Meta tags Obrigatórias -->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+     <!--CSS Basico -->
+     <link rel="stylesheet" href="/stylesheets/basico.css">
+     <!-- vaquejada-selecionada CSS -->
+     <link rel="stylesheet" href="/stylesheets/vaquejada-selecionada.css">
+
+     <title>
+          <%= vaquejada.nome %>
+     </title>
+</head>
+
+<body>
+
+     <header>
+
+          <!-- Navegação -->
+          <nav class="navbar navbar-expand-lg navbar-dark">
+
+               <a href="/adm" class="navbar-brand">
+                    <img src="/images/logos/conect_logo.png" alt="">
+               </a>
+
+               <!-- Navbar-links -->
+               <div class="collapse navbar-collapse justify-content-around">
+                    <div class="navbar-nav">
+                         <a href="#" class="nav-item nav-link mr-4">DEFINIR RESULTADO</a>
+
+                         <a href="/impressao/<%= vaquejada.id %>" class="nav-item nav-link mr-4">IMPRIMIR</a>
+
+                         <a href="/senhas_config/<%= vaquejada.id %>" class="nav-item nav-link mr-4">CONFIRMAR
+                              SENHAS</a>
+
+                         <a href="#" type="button" data-toggle="modal" data-target="#modalApagarVaquejada"
+                              class="nav-item nav-link mr-4">FINALIZAR</a>
+
+                         <a href="/operations/deslogar" class="btn mr-5 botão" style="width: 133px;">DESLOGAR</a>
+                    </div>
+               </div>
+               <!-- Fim do navbar links -->
+
+               <!-- Modal -->
+               <div class="modal fade" id="modalApagarVaquejada" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                         <div class="modal-content" style="align-items: center;">
+                              <div class="modal-body">
+                                   <h5 class="modal-title" id="exampleModalLabel">TEM CERTEZA DESSA AÇÃO?</h5>
+                              </div>
+                              <div class="modal-footer">
+                                   <form action="/operations/finalizarVaquejada/<%= vaquejada.id %>" method="post">
+
+                                        <button type="submit" class="btn btn-primary">APAGAR VAQUEJADA</button>
+                                        <button type="button" class="btn btn-secondary"
+                                             data-dismiss="modal">SAIR</button>
+
+                                   </form>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+
+
+          </nav>
+          <!-- Fim da navegação -->
+
+     </header>
+
+     <section>
+
+          <div class="container">
+
+               <!-- Corousel -->
+               <div id="carousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                         <div class="carousel-item active">
+                              <img class="d-block w-100 img-banner" src="/images/banner/<%= vaquejada.banner %>"
+                                   alt="Primeiro Slide">
+                         </div>
+                    </div>
+               </div>
+
+               <!-- Informações -->
+               <div class="row">
+                    <div class="col-md-6">
+                         <p class="texto">
+                              <%= vaquejada.descriçao %>
+                         </p>
+                    </div>
+                    <div class="col-md-6">
+                         <img class="gif-img" src="/images/gifs/gif.gif" alt="">
+
+                    </div>
+
+               </div>
+          </div>
+     </section>
+
+     <footer>
+          <nav class="navbar navbar-light" id="footer">
+               <div>
+                    <p class="direito-autoral">© 2024 CR84PUBLICIDADE - Tecnologia da InformaçãoA cópia total ou parcial
+                         do conteúdo deste site sem a permissão de seus idealizadores é crime previsto na Lei de
+                         Direitos Autorais</p>
+               </div>
+          </nav>
+     </footer>
+
+
+     <!-- JS botão -->
+     <!-- <script src="../js/sobre_a_vaquejada.js"></script> -->
+
+     <!-- JavaScript (Opcional) -->
+     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+          crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+          integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+          crossorigin="anonymous"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+          integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+          crossorigin="anonymous"></script>
+</body>
+
+</html>

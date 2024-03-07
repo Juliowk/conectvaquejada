@@ -1,0 +1,63 @@
+:root {
+     --cor-texto: #FFFFFF;
+     --cor-borda: #ffffff2f;
+     --cor-senha: #070707;
+     --cor-background: #00266F;
+     --cor-reservada: #FDF304;
+     --cor-confirmado: #7BFF3D;
+     --box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+body {
+     background-color: var(--cor-background);
+}
+
+section {
+     margin-top: 60px;
+}
+
+.btn-senha {
+     width: 80px;
+     font-size: 18px;
+     border-radius: 20px;
+     background-color: var(--cor-texto);
+     color: var(--cor-senha);
+     margin-bottom: 20px;
+     box-shadow: var(--box-shadow);
+}
+
+.categoria {
+     margin-bottom: 30px;
+     border: solid 1px var(--cor-borda);
+     border-radius: 10px;
+}
+
+.nomeDaCategoria {
+     margin-top: 15px;
+     margin-bottom: 20px;
+}
+
+.btn-reservada {
+     background-color: var(--cor-reservada);
+}
+
+.btn-disponivel {
+     background-color: white;
+}
+
+.btn-confirmado {
+     background-color: var(--cor-confirmado);
+}
+
+.textos {
+     color: var(--cor-texto);
+}
+
+.titulos {
+     text-align: center;
+}
+
+#voltar a {
+     font-size: 20px;
+     margin-top: 300px;
+}

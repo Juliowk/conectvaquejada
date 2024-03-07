@@ -1,0 +1,84 @@
+:root {
+     --cor-background: #00266F;
+     --cor-pix: #070707;
+     --box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+body {
+     margin: 0;
+     padding: 0;
+     background: var(--cor-background);
+}
+
+#carousel {
+     margin-top: 35px;
+     margin-bottom: 20px;
+}
+
+.btn-voltar {
+     width: 200px;
+     margin-left: 345px;
+}
+
+.btn-pagar {
+     margin-left: 30px;
+     margin-top: 30px;
+     width: 200px;
+}
+
+.cadastro {
+     margin-bottom: 30px;
+}
+
+.input-formulario {
+     margin-left: 14px;
+     height: 37px;
+     font-size: 19px;
+     background: rgba(255, 255, 255, 0.70);
+     box-shadow: rgba(255, 255, 255, 0.70);
+}
+
+
+.form-fixos {
+     text-align: center;
+     font-size: 25px;
+}
+
+form {
+     margin-bottom: 50px;
+}
+
+.modal-body {
+     text-align: center;
+}
+
+.modal-body p {
+     color: var(--cor-pix);
+     font-size: 20px;
+     font-style: normal;
+     font-weight: 400;
+     line-height: normal;
+}
+
+.modal-body #pix {
+     font-size: 17px;
+     width: 290px;
+     margin-left: 20%;
+}
+
+.modal-body h3 {
+     margin: 40px 0 40px 0;
+}
+
+.modal-body img {
+     width: 400px;
+}
+
+.modal-header {
+     border-bottom: none;
+     height: 60px;
+}
+
+.close {
+     font-size: 50px;
+}
