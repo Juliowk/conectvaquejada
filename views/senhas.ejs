@@ -37,27 +37,17 @@
 
      <!-- Navegação -->
      <nav class="navbar navbar-expand-lg navbar-dark">
+
           <a href="/adm" class="navbar-brand">
-               <img src="/images/logos/conect_logo.png" alt="">
+               <img class="logo" src="/images/logos/conect_logo.png" alt="">
           </a>
 
-          <!-- Navbar-links -->
-          <div class="collapse navbar-collapse justify-content-around">
-               <div class="navbar-nav">
-                    <a href="#" class="nav-item nav-link mr-5">RESULTADO</a>
-                    <a href="/senhas_config/<%= vaquejadaId %>" class="nav-item nav-link mr-5">CONFIRMAR SENHAS</a>
-                    <a href="/operations/deslogar" class="nav-item nav-link mr-5">DESLOGAR</a>
-                    <a href="/login" class="btn mr-5 botão" style="width: 133px;">ENTRAR</a>
-               </div>
-          </div>
-          <!-- Fim do navbar links -->
      </nav>
      <!-- Fim da navegação -->
 
 </header>
 
-<section>
-
+<section class="mb-5">
      <!-- Link de voltar -->
      <div class="container" id="voltar">
 
@@ -74,7 +64,12 @@
 
                </div>
           </div>
+
      </div>
+     <!-- Link de volta -->
+</section>
+
+<section>
 
      <!-- Senhas reservadas -->
      <div class="container">
@@ -273,6 +268,6 @@
                alert("Ocorreu um erro ao mudar o status da senha");
           })
      </script>
-<% } %>
+     <% } %>
 
 </html>

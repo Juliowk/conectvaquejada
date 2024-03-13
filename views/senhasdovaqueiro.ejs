@@ -48,24 +48,10 @@
      </nav>
      <!-- Fim da navegação -->
 
-     <!-- Link de voltar -->
-     <div class="container" id="voltar">
-
-          <div class="row">
-               <div class="col-11"></div>
-               <div class="col-1">
-
-                    <a href="/" class="texto">Inicio</a>
-
-               </div>
-
-          </div>
-     </div>
-
      <!-- Inicio da Section -->
      <% for (const senhaDoComprador of senhasDoComprador) { %>
 
-          <section>
+          <section class="senhasSection">
                <div class="container">
 
                     <div class="row">
@@ -217,18 +203,17 @@
                                                             <label for="status" class="texto col">STATUS:</label>
                                                             <input readonly type="text"
                                                                  class="form-control-plaintext texto-centralizado input-formulario"
-                                                                 id="status" name="status"
-                                                                 value="<%= senha.status %>">
+                                                                 id="status" name="status" value="<%= senha.status %>">
                                                        </div>
 
                                                   </div>
-                                                  
+
 
                                              </div>
 
-                                        <% } %>
+                                             <% } %>
 
-                                   <% } %>
+                                                  <% } %>
 
                               </form>
                               <!-- Fim do Formulario -->
@@ -246,7 +231,7 @@
 
 
                <!-- Inicio Footer -->
-               <footer>
+               <footer id="footer">
 
                     <nav class="navbar navbar-light" id="footer">
 

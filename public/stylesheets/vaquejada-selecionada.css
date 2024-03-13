@@ -6,6 +6,9 @@
 
 body {
      background-color: var(--cor-background);
+     display: flex;
+     flex-direction: column;
+     min-height: 100vh;
 }
 
 #carousel {
@@ -43,15 +46,6 @@ body {
      padding-top: 10px;
 }
 
-section {
-     margin-bottom: 30px;
-}
-
-#footer {
-     background-color: var(--cor-footer);
-     height: 60px;
-}
-
 .direito-autoral {
      width: 677px;
      padding-top: 8px;
@@ -71,4 +65,13 @@ section {
 
 .gif-img {
      object-fit: cover;
+}
+
+section {
+     margin-bottom: 30px;
+     flex: 1;
+}
+
+#footer {
+     flex-shrink: 0;
 }

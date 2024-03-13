@@ -337,7 +337,7 @@ router.post('/login', upload.none(), async (req, res) => {
     }
 
   } catch (error) {
-    res.redirect(`/erro?erro=500`);
+    res.redirect(`/login?erroDeLogin=${error}`);
   }
 
 });

@@ -1,3 +1,30 @@
-footer {
-     margin-top: 66px;
+body {
+     display: flex;
+     flex-direction: column;
+     min-height: 100vh;
+     ;
+}
+
+section {
+     flex: 1;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     height: auto;
+}
+
+section {
+     margin-top: 20px;
+     margin-bottom: 20px;
+}
+
+.container {
+     padding-top: 30px;
+     border-bottom: 0.5px dotted rgba(255, 255, 255, 0.17);
+}
+
+#footer {
+     flex-shrink: 0;
+
 }

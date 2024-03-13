@@ -99,12 +99,12 @@ router.get('/cadastro-de-compra', async (req, res) => {
   res.render('cadastro', { vaquejada, senha, categoria, erro });
 });
 
-// LOGIN E ACESSO A ADMINITRADORES;
-
-// PÁGINA DE ADMINISTRADORES;
+// PÁGINA DE ADMINISTRADORES (ACESSO A ADMINITRADORES);
 router.get('/adm', [requerAutenticacao], (req, res) => {
   res.render('paginaAdm');
 });
+
+// LOGIN;
 
 // PAGINA DE LOGIN;
 router.get('/login', (req, res) => {
@@ -252,16 +252,18 @@ router.get('/impressao/:idVaquejada', async (req, res) => {
 
   }
 
+  const vaquejadaNome = senhas[0].nomeVaquejada;
+
   var senhasEnvio;
   if (!req.query.render) {
     senhasEnvio = senhas;
-    res.render('impressão', { senhasEnvio, idVaquejada });
+    res.render('impressão', { senhasEnvio, idVaquejada, vaquejadaNome });
   } else if (req.query.render === 'sc') {
     senhasEnvio = senhasConfirmadas;
-    res.render('impressão', { senhasEnvio, idVaquejada });
+    res.render('impressão', { senhasEnvio, idVaquejada, vaquejadaNome });
   } else if (req.query.render === 'sr') {
     senhasEnvio = senhasReservadas;
-    res.render('impressão', { senhasEnvio, idVaquejada });
+    res.render('impressão', { senhasEnvio, idVaquejada, vaquejadaNome });
   }
 
 });

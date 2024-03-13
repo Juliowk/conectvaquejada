@@ -63,7 +63,8 @@
                          <h3 class="texto texto-h3">CADASTRO</h3>
                     </div>
                     <div class="col-md-6">
-                         <a href="selecionar-senha.html" class="btn botão btn-voltar">Voltar</a>
+                         <a href="/selecionar-categoria-senha?idVaquejada=<%= vaquejada.id %>&idCategoria=<%= categoria.id %>"
+                              class="btn botão btn-voltar">Voltar</a>
                     </div>
                </div>
 
@@ -259,11 +260,11 @@
 
 
 
-     <% if (erro != undefined) { %>
+     <% if (erro !=undefined) { %>
           <script>
                alert('Valores necesssarios não informados!');
           </script>
-     <% } %>
+          <% } %>
 </body>
 
 </html>

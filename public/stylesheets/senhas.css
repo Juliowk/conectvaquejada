@@ -12,8 +12,17 @@ body {
      background-color: var(--cor-background);
 }
 
-section {
-     margin-top: 60px;
+header {
+     height: 90px;
+}
+
+.logo {
+     margin-top: 10px;
+     width: 400px;
+     position: absolute;
+     top: 150%;
+     left: 50%;
+     transform: translate(-50%, -50%);
 }
 
 .btn-senha {
